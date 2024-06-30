@@ -1,5 +1,7 @@
-import Profile from "./Profile/Profile";
-import userData from "../userData.json";
+import Profile from "./components/Profile/Profile";
+import userData from "./userData.json";
+import FriendList from "./components/FriendList/FriendList";
+import friends from "./friends.json";
 
 export default function App() {
   return (
@@ -11,6 +13,8 @@ export default function App() {
         image={userData.avatar}
         stats={userData.stats}
       />
+      <FriendList friends={friends} />
+      {/* <TransactionHistory items={transactions} /> */}
     </>
   );
 }
