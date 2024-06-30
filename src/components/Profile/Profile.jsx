@@ -1,3 +1,5 @@
+import s from "./Profile.module.css";
+
 export default function Profile({
   name,
   tag,
@@ -11,20 +13,20 @@ export default function Profile({
     { label: "Likes", value: likes },
   ];
   return (
-    <div>
-      <div>
-        <img src={image} alt="User avatar" />
-        <p>{name}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
+    <div className={s.profile}>
+      <div className={s.data}>
+        <img className={s.img} src={image} alt="User avatar" />
+        <p className={s.name}>{name}</p>
+        <p className={s.userInfo}>@{tag}</p>
+        <p className={s.userInfo}>{location}</p>
       </div>
 
-      <ul>
+      <ul className={s.list}>
         {stats.map(({ label, value }) => {
           return (
-            <li key={label}>
-              <span>{label}</span>
-              <span>{value}</span>
+            <li key={label} className={s.item}>
+              <span className={s.label}>{label}</span>
+              <span className={s.span}>{value}</span>
             </li>
           );
         })}
